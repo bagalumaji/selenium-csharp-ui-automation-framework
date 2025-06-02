@@ -31,7 +31,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
         }
         public bool isLoginButtonDisplayed()
         {
-            return this.driver.FindElement(LoginButton).Displayed;
+            return PageActions.isElementDisplayed(this.driver.FindElement(LoginButton));
         }
         public void verifyThatLoginButtonIsDisplayed()
         {

@@ -2,7 +2,7 @@
 
 namespace selenium_csharp_ui_automation_framework.DriverInfo
 {
-    public class DriverManger
+    public class DriverManager
     {
         private static ThreadLocal<IWebDriver> threadLocalDriver = new ThreadLocal<IWebDriver>();
         public static IWebDriver GetDriver() => threadLocalDriver.Value;

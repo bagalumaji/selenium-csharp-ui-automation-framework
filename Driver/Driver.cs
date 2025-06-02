@@ -7,26 +7,26 @@ namespace selenium_csharp_ui_automation_framework.DriverInfo
     {
         public static void InitDriver()
         {
-            if (DriverManger.GetDriver() == null)
+            if (DriverManager.GetDriver() == null)
             {
                 IWebDriver driver = new ChromeDriver();
                 driver.Manage().Window.Maximize();
-                DriverManger.SetDriver(driver);
+                DriverManager.SetDriver(driver);
             }
 
         }
 
         public static void QuitDriver()
         {
-            if (DriverManger.GetDriver() != null)
+            if (DriverManager.GetDriver() != null)
             {
                 try
                 {
-                    DriverManger.GetDriver().Quit();
+                    DriverManager.GetDriver().Quit();
                 }
                 finally
                 {
-                    DriverManger.UnloadDriver();
+                    DriverManager.UnloadDriver();
                 }
             }
         }

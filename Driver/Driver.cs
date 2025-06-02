@@ -11,6 +11,8 @@ namespace selenium_csharp_ui_automation_framework.DriverInfo
             {
                 IWebDriver driver = new ChromeDriver();
                 driver.Manage().Window.Maximize();
+                driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
+                driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
                 DriverManager.SetDriver(driver);
             }
 

@@ -1,5 +1,6 @@
 ﻿
 using OpenQA.Selenium;
+using selenium_csharp_ui_automation_framework.PageAction;
 
 namespace selenium_csharp_ui_automation_framework.Pages
 {
@@ -11,16 +12,16 @@ namespace selenium_csharp_ui_automation_framework.Pages
 
         public void clickLoginButton()
         {
-            this.driver.FindElement(LoginButton).Click();
+            PageActions.click(this.driver.FindElement(LoginButton));
         }
 
         public void enterUserName(string userName)
         {
-            this.driver.FindElement(UserNameTextBox).SendKeys(userName);
+            PageActions.sendKeys(this.driver.FindElement(UserNameTextBox),userName);
         }
         public void enterPassword(string password)
         {
-            this.driver.FindElement(PasswordTextBox).SendKeys(password);
+            PageActions.sendKeys(this.driver.FindElement(PasswordTextBox),password);
         }
         public void login(string userName, string password)
         {

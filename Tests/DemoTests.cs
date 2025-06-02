@@ -1,16 +1,17 @@
+using selenium_csharp_ui_automation_framework.DriverInfo;
 using selenium_csharp_ui_automation_framework.Tests.TestSetup;
 
 namespace selenium_csharp_ui_automation_framework.Tests
 {
     public class DemoTests : BaseTestSetup
     {
-       
+
         [Test]
         public void DemoTest()
         {
-            _driver.Navigate().GoToUrl("https://www.google.com");
-            Console.WriteLine("Title : "+_driver.Title);
-            Assert.That(_driver.Title.Contains("Google"), "Title does not contain 'Google'");
+            DriverManger.GetDriver().Navigate().GoToUrl("https://www.google.com");
+            Console.WriteLine("Title : " + DriverManger.GetDriver().Title);
+            Assert.That(DriverManger.GetDriver().Title.Contains("Google"), "Title does not contain 'Google'");
         }
     }
 }

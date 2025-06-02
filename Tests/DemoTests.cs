@@ -18,6 +18,10 @@ namespace selenium_csharp_ui_automation_framework.Tests
             LoginPage loginPage = new LoginPage();
             loginPage.verifyThatLoginButtonIsDisplayed();
             loginPage.login("standard_user", "secret_sauce");
+
+            HomePage homePage = new HomePage();
+            homePage.verifyThatTitleProductIsDisplayed();
+
             Thread.Sleep(5000);
         }
     }

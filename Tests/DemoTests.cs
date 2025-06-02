@@ -1,4 +1,4 @@
-using selenium_csharp_ui_automation_framework.DriverInfo;
+using selenium_csharp_ui_automation_framework.Driver;
 using selenium_csharp_ui_automation_framework.Pages;
 using selenium_csharp_ui_automation_framework.Tests.TestSetup;
 
@@ -11,7 +11,6 @@ namespace selenium_csharp_ui_automation_framework.Tests
         public void DemoTest()
         {
             string title = "Swag Labs";
-            DriverManager.GetDriver().Navigate().GoToUrl("https://www.saucedemo.com/");
             Console.WriteLine("Title : " + DriverManager.GetDriver().Title);
             Assert.That(DriverManager.GetDriver().Title.Contains(title), "Title does not contain "+title);
 

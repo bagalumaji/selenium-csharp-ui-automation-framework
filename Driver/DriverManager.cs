@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace selenium_csharp_ui_automation_framework.DriverInfo
+namespace selenium_csharp_ui_automation_framework.Driver
 {
     public class DriverManager
     {

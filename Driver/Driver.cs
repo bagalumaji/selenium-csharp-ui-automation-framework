@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace selenium_csharp_ui_automation_framework.DriverInfo
+namespace selenium_csharp_ui_automation_framework.Driver
 {
     public class Driver
     {
@@ -13,6 +13,7 @@ namespace selenium_csharp_ui_automation_framework.DriverInfo
                 driver.Manage().Window.Maximize();
                 driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(30);
                 driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+                driver.Navigate().GoToUrl("https://www.saucedemo.com/");
                 DriverManager.SetDriver(driver);
             }
 

@@ -1,6 +1,4 @@
-﻿using selenium_csharp_ui_automation_framework.DriverInfo;
-
-namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
+﻿namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
 {
     public class BaseTestSetup
     {
@@ -8,12 +6,12 @@ namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
         [SetUp]
         public void Setup()
         {
-            Driver.InitDriver();
+            Driver.Driver.InitDriver();
         }
         [TearDown]
         public void TearDown()
         {
-            Driver.QuitDriver();
+            Driver.Driver.QuitDriver();
         }
     }
 }

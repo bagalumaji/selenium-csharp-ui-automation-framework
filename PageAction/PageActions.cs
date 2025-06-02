@@ -1,5 +1,5 @@
 ﻿using OpenQA.Selenium;
-using selenium_csharp_ui_automation_framework.DriverInfo;
+using selenium_csharp_ui_automation_framework.Driver;
 
 namespace selenium_csharp_ui_automation_framework.PageAction
 {

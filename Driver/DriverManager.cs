@@ -13,7 +13,7 @@ namespace selenium_csharp_ui_automation_framework.Driver
             if (threadLocalDriver.IsValueCreated && threadLocalDriver.Value != null)
             {
                 threadLocalDriver.Value.Dispose();
-                threadLocalDriver.Value = null;
+                threadLocalDriver = null;
             }
         }
     }

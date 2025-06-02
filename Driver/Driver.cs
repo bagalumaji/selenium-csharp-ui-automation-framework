@@ -1,12 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 
-namespace selenium_csharp_ui_automation_framework.Driver
+namespace selenium_csharp_ui_automation_framework.DriverInfo
 {
-    internal class Driver
+    public class Driver
     {
+        public static void InitDriver()
+        {
+            if (DriverManger.GetDriver() == null)
+            {
+                IWebDriver driver = new ChromeDriver();
+                driver.Manage().Window.Maximize();
+                DriverManger.SetDriver(driver);
+            }
+
+        }
+
+        public static void QuitDriver()
+        {
+            if (DriverManger.GetDriver() != null)
+            {
+                try
+                {
+                    DriverManger.GetDriver().Quit();
+                }
+                finally
+                {
+                    DriverManger.UnloadDriver();
+                }
+            }
+        }
     }
 }

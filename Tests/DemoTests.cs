@@ -9,9 +9,10 @@ namespace selenium_csharp_ui_automation_framework.Tests
         [Test]
         public void DemoTest()
         {
-            DriverManger.GetDriver().Navigate().GoToUrl("https://www.google.com");
+            String title = "Swag Labs";
+            DriverManger.GetDriver().Navigate().GoToUrl("https://www.saucedemo.com/");
             Console.WriteLine("Title : " + DriverManger.GetDriver().Title);
-            Assert.That(DriverManger.GetDriver().Title.Contains("Google"), "Title does not contain 'Google'");
+            Assert.That(DriverManger.GetDriver().Title.Contains(title), "Title does not contain "+title);
         }
     }
 }

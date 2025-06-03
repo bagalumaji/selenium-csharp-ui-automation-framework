@@ -3,8 +3,9 @@ using selenium_csharp_ui_automation_framework.Driver;
 
 namespace selenium_csharp_ui_automation_framework.PageAction
 {
-    public class PageActions
+    public sealed class PageActions
     {
+        private PageActions() { }
         public static void NavigateToUrl(string url)
         {
             DriverManager.GetDriver().Navigate().GoToUrl(url);

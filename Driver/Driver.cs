@@ -3,8 +3,10 @@ using OpenQA.Selenium.Chrome;
 
 namespace selenium_csharp_ui_automation_framework.Driver
 {
-    public class Driver
+
+    public sealed class Driver
     {
+        private Driver() { }
         public static void InitDriver()
         {
             if (DriverManager.GetDriver() == null)

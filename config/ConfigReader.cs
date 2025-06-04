@@ -26,6 +26,6 @@ namespace selenium_csharp_ui_automation_framework.config
                 ?? throw new ConfigFileNotFoundException("Failed to load config into POCO. File might be not well structured...");
         }
 
-        public static Config GetTimeoutConfig() => _cachedConfig;
+        public static Config GetConfig() => _cachedConfig;
     }
 }

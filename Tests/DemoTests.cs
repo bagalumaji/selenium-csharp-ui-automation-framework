@@ -12,7 +12,7 @@ namespace selenium_csharp_ui_automation_framework.Tests
         public void DemoTest()
         {
 
-            var config = ConfigReader.GetTimeoutConfig();
+            var config = ConfigReader.GetConfig();
 
             Console.WriteLine("Title : " + DriverManager.GetDriver().Title);
             Assert.That(DriverManager.GetDriver().Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);

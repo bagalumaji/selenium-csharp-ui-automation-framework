@@ -12,13 +12,13 @@ namespace selenium_csharp_ui_automation_framework.Pages
     {
         By titleProduct = By.XPath("//span[normalize-space()='Products']");
 
-        public bool isTitleProductDisplayed()
+        public bool IsTitleProductDisplayed()
         {
           return PageActions.isElementDisplayed(this.driver.FindElement(titleProduct));
         }
-        public void verifyThatTitleProductIsDisplayed()
+        public void VerifyThatTitleProductIsDisplayed()
         {
-            Assert.That(isTitleProductDisplayed(), "Title 'Products' is not displayed on the page.");   
+            Assert.That(IsTitleProductDisplayed(), "Title 'Products' is not displayed on the page.");   
         }
 
     }

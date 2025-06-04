@@ -1,0 +1,10 @@
+{
+  "timeout": {
+    "minimumTimeout": 10,
+    "defaultTimeout": 15,
+    "maximumTimeout": 45
+  }
+  "url": "",
+  "username": "",
+  "password": ""
+}

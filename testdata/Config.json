@@ -2,9 +2,10 @@
   "timeout": {
     "minimumTimeout": 10,
     "defaultTimeout": 15,
-    "maximumTimeout": 45
+    "maximumTimeout": 45,
+    "PageLoad":30
   },
-  "url": "",
+  "url": "https://www.saucedemo.com/",
   "username": "standard_user",
   "password": "secret_sauce"
 }

@@ -12,16 +12,16 @@ namespace selenium_csharp_ui_automation_framework.Pages
 
         public void ClickLoginButton()
         {
-            PageActions.click(this.driver.FindElement(LoginButton));
+            PageActions.Click(this.driver.FindElement(LoginButton));
         }
 
         public void EnterUserName(string userName)
         {
-            PageActions.sendKeys(this.driver.FindElement(UserNameTextBox),userName);
+            PageActions.SendKeys(this.driver.FindElement(UserNameTextBox),userName);
         }
         public void EnterPassword(string password)
         {
-            PageActions.sendKeys(this.driver.FindElement(PasswordTextBox),password);
+            PageActions.SendKeys(this.driver.FindElement(PasswordTextBox),password);
         }
         public void login(string userName, string password)
         {
@@ -31,7 +31,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
         }
         public bool IsLoginButtonDisplayed()
         {
-            return PageActions.isElementDisplayed(this.driver.FindElement(LoginButton));
+            return PageActions.IsElementDisplayed(this.driver.FindElement(LoginButton));
         }
         public void verifyThatLoginButtonIsDisplayed()
         {

@@ -14,7 +14,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
 
         public bool IsTitleProductDisplayed()
         {
-          return PageActions.isElementDisplayed(this.driver.FindElement(titleProduct));
+          return PageActions.IsElementDisplayed(this.driver.FindElement(titleProduct));
         }
         public void VerifyThatTitleProductIsDisplayed()
         {

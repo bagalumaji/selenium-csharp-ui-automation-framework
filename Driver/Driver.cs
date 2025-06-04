@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
-namespace selenium_csharp_ui_automation_framework.Driver
+namespace selenium_csharp_ui_automation_framework.driver
 {
 
     public sealed class Driver

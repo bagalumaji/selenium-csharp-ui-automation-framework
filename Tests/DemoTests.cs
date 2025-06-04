@@ -1,7 +1,7 @@
 using selenium_csharp_ui_automation_framework.driver;
 using selenium_csharp_ui_automation_framework.Pages;
 using selenium_csharp_ui_automation_framework.Tests.TestSetup;
-
+using selenium_csharp_ui_automation_framework.config;
 namespace selenium_csharp_ui_automation_framework.Tests
 {
     public class DemoTests : BaseTestSetup
@@ -10,13 +10,16 @@ namespace selenium_csharp_ui_automation_framework.Tests
         [Test]
         public void DemoTest()
         {
+
+            var config = ConfigReader.GetTimeoutConfig();
+
             string title = "Swag Labs";
             Console.WriteLine("Title : " + DriverManager.GetDriver().Title);
-            Assert.That(DriverManager.GetDriver().Title.Contains(title), "Title does not contain "+title);
+            Assert.That(DriverManager.GetDriver().Title.Contains(title), "Title does not contain " + title);
 
             LoginPage loginPage = new LoginPage();
             loginPage.verifyThatLoginButtonIsDisplayed();
-            loginPage.login("standard_user", "secret_sauce");
+            loginPage.login(config.Username, config.Password);
 
             HomePage homePage = new HomePage();
             homePage.VerifyThatTitleProductIsDisplayed();

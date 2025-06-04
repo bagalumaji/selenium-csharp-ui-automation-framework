@@ -10,22 +10,22 @@ namespace selenium_csharp_ui_automation_framework.PageAction
         {
             DriverManager.GetDriver().Navigate().GoToUrl(url);
         }
-        public static void click(IWebElement element)
+        public static void Click(IWebElement element)
         {
             element.Click();
         }
-        public static void sendKeys(IWebElement element, string text)
+        public static void SendKeys(IWebElement element, string text)
         {
             element.Clear();
             element.SendKeys(text);
         }
 
-        public static string getTitle()
+        public static string GetTitle()
         {
             return DriverManager.GetDriver().Title;
         }
 
-        public static bool isElementDisplayed(IWebElement element)
+        public static bool IsElementDisplayed(IWebElement element)
         {
             try
             {

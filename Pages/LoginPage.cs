@@ -10,32 +10,32 @@ namespace selenium_csharp_ui_automation_framework.Pages
         By PasswordTextBox = By.Id("password");
         By LoginButton = By.Name("login-button");
 
-        public void clickLoginButton()
+        public void ClickLoginButton()
         {
             PageActions.click(this.driver.FindElement(LoginButton));
         }
 
-        public void enterUserName(string userName)
+        public void EnterUserName(string userName)
         {
             PageActions.sendKeys(this.driver.FindElement(UserNameTextBox),userName);
         }
-        public void enterPassword(string password)
+        public void EnterPassword(string password)
         {
             PageActions.sendKeys(this.driver.FindElement(PasswordTextBox),password);
         }
         public void login(string userName, string password)
         {
-            enterUserName(userName);
-            enterPassword(password);
-            clickLoginButton();
+            EnterUserName(userName);
+            EnterPassword(password);
+            ClickLoginButton();
         }
-        public bool isLoginButtonDisplayed()
+        public bool IsLoginButtonDisplayed()
         {
             return PageActions.isElementDisplayed(this.driver.FindElement(LoginButton));
         }
         public void verifyThatLoginButtonIsDisplayed()
         {
-            Assert.That(isLoginButtonDisplayed(), "Login button is not displayed on the page.");
+            Assert.That(IsLoginButtonDisplayed(), "Login button is not displayed on the page.");
         }
     }
 }

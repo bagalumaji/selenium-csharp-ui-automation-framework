@@ -6,12 +6,12 @@
         [SetUp]
         public void Setup()
         {
-            Driver.Driver.InitDriver();
+            driver.Driver.InitDriver();
         }
         [TearDown]
         public void TearDown()
         {
-            Driver.Driver.QuitDriver();
+            driver.Driver.QuitDriver();
         }
     }
 }

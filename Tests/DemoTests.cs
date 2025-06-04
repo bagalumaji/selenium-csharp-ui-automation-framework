@@ -1,4 +1,4 @@
-using selenium_csharp_ui_automation_framework.Driver;
+using selenium_csharp_ui_automation_framework.driver;
 using selenium_csharp_ui_automation_framework.Pages;
 using selenium_csharp_ui_automation_framework.Tests.TestSetup;
 
@@ -19,7 +19,7 @@ namespace selenium_csharp_ui_automation_framework.Tests
             loginPage.login("standard_user", "secret_sauce");
 
             HomePage homePage = new HomePage();
-            homePage.verifyThatTitleProductIsDisplayed();
+            homePage.VerifyThatTitleProductIsDisplayed();
 
             Thread.Sleep(5000);
         }

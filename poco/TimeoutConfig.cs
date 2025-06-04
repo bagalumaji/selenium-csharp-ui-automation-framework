@@ -5,5 +5,6 @@
         public int MinimumTimeout { get; set; }
         public int DefaultTimeout{get;set;}
         public int MaximumTimeout{ get; set; }
+        public int PageLoadTimeout { get; set; }
     }
 }

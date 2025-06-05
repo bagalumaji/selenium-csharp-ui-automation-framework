@@ -14,8 +14,8 @@ namespace selenium_csharp_ui_automation_framework.Tests
 
             var config = ConfigReader.GetConfig();
 
-            Console.WriteLine("Title : " + DriverManager.GetDriver().Title);
-            Assert.That(DriverManager.GetDriver().Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
+            Console.WriteLine("Title : " + PageAction.PageActions.Title);
+            Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
 
             LoginPage loginPage = new LoginPage();
             loginPage.verifyThatLoginButtonIsDisplayed();

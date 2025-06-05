@@ -3,7 +3,7 @@
     "minimumTimeout": 10,
     "defaultTimeout": 15,
     "maximumTimeout": 45,
-    "PageLoad":30
+    "pageLoadTimeout": 30
   },
   "url": "https://www.saucedemo.com/",
   "username": "standard_user",

@@ -6,22 +6,22 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class LoginPage : BasePage
     {
-        By UserNameTextBox = By.Id("user-name");
-        By PasswordTextBox = By.Id("password");
-        By LoginButton = By.Name("login-button");
+        IWebElement UserNameTextBox => this.driver.FindElement(By.Id("user-name"));
+        IWebElement PasswordTextBox => this.driver.FindElement(By.Id("password"));
+        IWebElement LoginButton => this.driver.FindElement(By.Name("login-button"));
 
         public void ClickLoginButton()
         {
-            PageActions.Click(this.driver.FindElement(LoginButton));
+            LoginButton.ClickOnElement();
         }
 
         public void EnterUserName(string userName)
         {
-            PageActions.SendKeys(this.driver.FindElement(UserNameTextBox),userName);
+            UserNameTextBox.SendKeysToElement(userName);
         }
         public void EnterPassword(string password)
         {
-            PageActions.SendKeys(this.driver.FindElement(PasswordTextBox),password);
+            PasswordTextBox.SendKeysToElement(password);
         }
         public void login(string userName, string password)
         {
@@ -31,7 +31,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
         }
         public bool IsLoginButtonDisplayed()
         {
-            return PageActions.IsElementDisplayed(this.driver.FindElement(LoginButton));
+            return LoginButton.IsElementDisplayed();
         }
         public void verifyThatLoginButtonIsDisplayed()
         {

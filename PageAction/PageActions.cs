@@ -13,10 +13,17 @@ namespace selenium_csharp_ui_automation_framework.PageAction
         {
             element.Click();
         }
+        public static void ClickOnElement(this By locator)
+        {
+        }
         public static void SendKeysToElement(this IWebElement element, string text)
         {
             element.Clear();
             element.SendKeys(text);
+        }
+        public static void SendKeysToElement(this By locator, string text)
+        {
+            
         }
 
         public static string Title => DriverManager.GetDriver().Title;

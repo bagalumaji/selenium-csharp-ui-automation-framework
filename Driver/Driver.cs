@@ -20,7 +20,6 @@ namespace selenium_csharp_ui_automation_framework.driver
                 driver.Navigate().GoToUrl(config.Url);
                 DriverManager.SetDriver(driver);
             }
-
         }
 
         public static void QuitDriver()

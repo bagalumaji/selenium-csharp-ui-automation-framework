@@ -10,7 +10,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class HomePage : BasePage
     {
-        IWebElement TitleProduct => this.driver.FindElement(By.XPath("//span[normalize-space()='Products']"));
+        By TitleProduct => By.XPath("//span[normalize-space()='Products']");
 
         public bool IsTitleProductDisplayed()
         {

@@ -6,9 +6,9 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class LoginPage : BasePage
     {
-        IWebElement UserNameTextBox => this.driver.FindElement(By.Id("user-name"));
-        IWebElement PasswordTextBox => this.driver.FindElement(By.Id("password"));
-        IWebElement LoginButton => this.driver.FindElement(By.Name("login-button"));
+        private By UserNameTextBox => By.Id("user-name");
+        private By PasswordTextBox =>By.Id("password");
+        private By LoginButton => By.Name("login-button");
 
         public void ClickLoginButton()
         {

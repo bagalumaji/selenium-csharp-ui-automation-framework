@@ -14,7 +14,7 @@ namespace selenium_csharp_ui_automation_framework.factory
 
         public static IWebElement WaitForVisibilityOfElement(By by, int? timeoutInSeconds = null)
         {
-            return getExplicitWait(timeoutInSeconds ?? ConfigReader.GetConfig().Timeout.DefaultTimeout)
+            return getExplicitWait(timeoutInSeconds ?? ConfigReader.GetConfig().Timeout.MinimumTimeout)
                 .Until(ExpectedConditions.ElementIsVisible(by));
         }
     }

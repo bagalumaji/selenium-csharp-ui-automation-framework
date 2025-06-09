@@ -7,11 +7,9 @@ namespace selenium_csharp_ui_automation_framework.Tests
 {
     public class DemoTests : BaseTestSetup
     {
-
         [Test]
         public void DemoTest()
         {
-
             var config = ConfigReader.GetConfig();
 
             Console.WriteLine("Title : " + PageAction.PageActions.Title);
@@ -23,8 +21,6 @@ namespace selenium_csharp_ui_automation_framework.Tests
 
             HomePage homePage = new HomePage();
             homePage.VerifyThatTitleProductIsDisplayed();
-
-            Thread.Sleep(5000);
         }
     }
 }

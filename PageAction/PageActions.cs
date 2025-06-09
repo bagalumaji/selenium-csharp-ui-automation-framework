@@ -10,48 +10,49 @@ namespace selenium_csharp_ui_automation_framework.PageAction
         {
             DriverManager.GetDriver().Navigate().GoToUrl(url);
         }
-        public static void ClickOnElement(this IWebElement element)
+        public static void ClickOnElement(this By locator, int? timeoutInSeconds)
         {
-            element.Click();
+            ExplicitWaitFactory
+                .WaitForVisibilityOfElement(locator, timeoutInSeconds)
+                .Click();
         }
         public static void ClickOnElement(this By locator)
         {
+            ClickOnElement(locator, null);
         }
-        public static void SendKeysToElement(this IWebElement element, string text)
+
+        public static void SendKeysToElement(this By locator, string text, int? timeoutInSeconds)
         {
-            element.Clear();
-            element.SendKeys(text);
+            ExplicitWaitFactory
+                .WaitForVisibilityOfElement(locator, timeoutInSeconds)
+                .SendKeys(text);
         }
         public static void SendKeysToElement(this By locator, string text)
         {
-            
+            SendKeysToElement(locator, text, null);
         }
 
         public static string Title => DriverManager.GetDriver().Title;
-        
 
-        public static bool IsElementDisplayed(this IWebElement element)
+        public static bool IsElementDisplayed(this By locator, int? timeoutInSeconds)
         {
             try
             {
-                return element.Displayed;
+                return ExplicitWaitFactory
+                    .WaitForVisibilityOfElement(locator, timeoutInSeconds)
+                    .Displayed;
             }
             catch (NoSuchElementException)
             {
                 return false;
             }
         }
+
         public static bool IsElementDisplayed(this By locator)
         {
-            try
-            {
-                return ExplicitWaitFactory.WaitForVisibilityOfElement(locator).Displayed;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
+            return IsElementDisplayed(locator,null);
         }
+
 
     }
 }

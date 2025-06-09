@@ -1,5 +1,6 @@
 ﻿using OpenQA.Selenium;
 using selenium_csharp_ui_automation_framework.driver;
+using selenium_csharp_ui_automation_framework.factory;
 
 namespace selenium_csharp_ui_automation_framework.PageAction
 {
@@ -34,6 +35,17 @@ namespace selenium_csharp_ui_automation_framework.PageAction
             try
             {
                 return element.Displayed;
+            }
+            catch (NoSuchElementException)
+            {
+                return false;
+            }
+        }
+        public static bool IsElementDisplayed(this By locator)
+        {
+            try
+            {
+                return ExplicitWaitFactory.WaitForVisibilityOfElement(locator).Displayed;
             }
             catch (NoSuchElementException)
             {

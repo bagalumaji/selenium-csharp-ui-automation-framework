@@ -6,9 +6,9 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class LoginPage : BasePage
     {
-        private By UserNameTextBox => By.Id("user-name");
-        private By PasswordTextBox =>By.Id("password");
-        private By LoginButton => By.Name("login-button");
+        private static By UserNameTextBox => By.Id("user-name");
+        private static By PasswordTextBox =>By.Id("password");
+        private static By LoginButton => By.Name("login-button");
 
         public void ClickLoginButton()
         {

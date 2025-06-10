@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using selenium_csharp_ui_automation_framework.config;
+using selenium_csharp_ui_automation_framework.factory;
 
 namespace selenium_csharp_ui_automation_framework.driver
 {
@@ -13,7 +14,7 @@ namespace selenium_csharp_ui_automation_framework.driver
             if (DriverManager.GetDriver() == null)
             {
                 var config = ConfigReader.GetConfig();
-                IWebDriver driver = new ChromeDriver();
+                IWebDriver driver =DriverFactory.CreateDriver(config.Browser);
                 driver.Manage().Window.Maximize();
                 driver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(config.Timeout.PageLoadTimeout);
                 driver.Navigate().GoToUrl(config.Url);

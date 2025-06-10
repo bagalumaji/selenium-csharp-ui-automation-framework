@@ -1,7 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using selenium_csharp_ui_automation_framework.config;
-using selenium_csharp_ui_automation_framework.factory;
+using selenium_csharp_ui_automation_framework.driver.factory;
 
 namespace selenium_csharp_ui_automation_framework.driver
 {

@@ -3,7 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 
-namespace selenium_csharp_ui_automation_framework.factory
+namespace selenium_csharp_ui_automation_framework.driver.factory
 {
     public static class DriverFactory
     {

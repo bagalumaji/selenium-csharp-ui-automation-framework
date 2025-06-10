@@ -15,11 +15,11 @@ namespace selenium_csharp_ui_automation_framework.Tests
             Console.WriteLine("Title : " + PageAction.PageActions.Title);
             Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
 
-            LoginPage loginPage = new LoginPage();
+            LoginPage loginPage = new();
             loginPage.verifyThatLoginButtonIsDisplayed();
             loginPage.login(config.Username, config.Password);
 
-            HomePage homePage = new HomePage();
+            HomePage homePage = new();
             homePage.VerifyThatTitleProductIsDisplayed();
         }
     }

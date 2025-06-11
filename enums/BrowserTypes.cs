@@ -2,9 +2,9 @@
 {
     public enum BrowserTypes
     {
-        Chrome,
-        Firefox,
-        Edge
+        CHROME,
+        FIREFOX,
+        EDGE
     }
 
 }

@@ -1,6 +1,12 @@
-﻿namespace selenium_csharp_ui_automation_framework.convertors
+﻿using selenium_csharp_ui_automation_framework.enums;
+
+namespace selenium_csharp_ui_automation_framework.convertors
 {
-    internal class StringToBrowserTypeConvertor
+    public static class StringToBrowserTypeConvertor
     {
+        public static BrowserTypes Convert(string browserType)
+        {
+                return Enum.Parse<BrowserTypes>(browserType);
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace selenium_csharp_ui_automation_framework.convertors
     {
         public static BrowserTypes Convert(string browserType)
         {
-                return Enum.Parse<BrowserTypes>(browserType);
+                return Enum.Parse<BrowserTypes>(browserType.ToUpper());
         }
     }
 }

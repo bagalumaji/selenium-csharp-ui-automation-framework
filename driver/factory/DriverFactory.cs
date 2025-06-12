@@ -18,8 +18,6 @@ namespace selenium_csharp_ui_automation_framework.driver.factory
         {
             return _drivers.TryGetValue(browserType, out var driver)
                 ? driver : throw new BrowserTypeNotSupportedException($"Browser type '{browserType.ToString()}' is not supported....");
-
-
         }
     }
 }

@@ -18,7 +18,7 @@ namespace selenium_csharp_ui_automation_framework.Tests
             loginPage.verifyThatLoginButtonIsDisplayed();
             loginPage.login(config.Username, config.Password);
 
-            HomePage homePage = new();
+            ProductsPage homePage = new();
             homePage.VerifyThatTitleProductIsDisplayed();
         }
     }

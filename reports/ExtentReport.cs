@@ -7,21 +7,27 @@ namespace selenium_csharp_ui_automation_framework.reports
 {
     public class ExtentReport
     {
-        private static ExtentReports extent = new ExtentReports();
-        public static ExtentReports InitReport()
+        private static ExtentReports ?extent = null;
+        public static void InitReport()
         {
-            var htmlReporter = new ExtentSparkReporter(FrameworkConstants.htmlReportFilePath);
-            extent.AddSystemInfo("Environment", "QA");
-            extent.AddSystemInfo("Browser", ConfigReader.GetConfig().Browser);
-            extent.AddSystemInfo("OS", "Windows 10");
-            extent.AddSystemInfo("Framework", "Selenium C# UI Automation Framework");
-            htmlReporter.Config.DocumentTitle = "Selenium C# UI Automation Framework Report";
-            extent.AttachReporter(htmlReporter);
-            return extent;
+            if (extent == null)
+            {
+                extent = new ExtentReports();
+                var htmlReporter = new ExtentSparkReporter(FrameworkConstants.htmlReportFilePath);
+                extent.AddSystemInfo("Environment", "QA");
+                extent.AddSystemInfo("Browser", ConfigReader.GetConfig().Browser);
+                extent.AddSystemInfo("OS", "Windows 10");
+                extent.AddSystemInfo("Framework", "Selenium C# UI Automation Framework");
+                htmlReporter.Config.DocumentTitle = "Selenium C# UI Automation Framework Report";
+                extent.AttachReporter(htmlReporter);
+            }
         }
         public static void CreateTest(string testName)
         {
-            ExtentManger.GetExtentTest = extent.CreateTest(testName);
+            if (extent != null)
+            {
+                ExtentManger.SetExtentTest(extent.CreateTest(testName));
+            }
         }
 
         public static void FlushReport(ExtentReports extent)

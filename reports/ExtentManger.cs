@@ -14,8 +14,11 @@ namespace selenium_csharp_ui_automation_framework.reports
 
         public static void Unload()
         {
-            extentTest.Value = null;
-            extentTest.Dispose();
+            if (extentTest.Value != null && extentTest.IsValueCreated)
+            {
+                extentTest.Value = null;
+                extentTest.Dispose();
+            }
         }
     }
 }

@@ -4,20 +4,23 @@ namespace selenium_csharp_ui_automation_framework.reports
 {
     public class ExtentManger
     {
-        private static readonly  ThreadLocal<ExtentTest> extentTest = new();
+        private static readonly  ThreadLocal<ExtentTest> _extentTest = new();
 
-        public static ExtentTest GetExtentTest
+        public static ExtentTest GetExtentTest()
         {
-            get => extentTest.Value;
-            set => extentTest.Value = value;
+            return _extentTest.Value;
         }
 
+        public static void SetExtentTest(ExtentTest extent)
+        {
+           _extentTest.Value = extent;
+        }
         public static void Unload()
         {
-            if (extentTest.Value != null && extentTest.IsValueCreated)
+            if (_extentTest.Value != null && _extentTest.IsValueCreated)
             {
-                extentTest.Value = null;
-                extentTest.Dispose();
+                _extentTest.Value = null;
+               _extentTest.Dispose();
             }
         }
     }

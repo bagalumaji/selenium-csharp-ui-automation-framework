@@ -7,7 +7,7 @@ namespace selenium_csharp_ui_automation_framework.reports
 {
     public class ExtentReport
     {
-        private static ExtentReports ?extent = null;
+        private static ExtentReports ?extent;
         public static void InitReport()
         {
             if (extent == null)
@@ -30,8 +30,12 @@ namespace selenium_csharp_ui_automation_framework.reports
             }
         }
 
-        public static void FlushReport(ExtentReports extent)
+        public static void FlushReport()
         {
+            if(extent != null)
+            {
+                extent.Flush();
+            }   
             ExtentManger.Unload();
         }
     }

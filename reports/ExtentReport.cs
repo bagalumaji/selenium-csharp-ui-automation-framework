@@ -1,6 +1,7 @@
 ﻿using AventStack.ExtentReports;
 using AventStack.ExtentReports.Reporter;
 using selenium_csharp_ui_automation_framework.config;
+using selenium_csharp_ui_automation_framework.Constants;
 
 namespace selenium_csharp_ui_automation_framework.reports
 {
@@ -9,7 +10,7 @@ namespace selenium_csharp_ui_automation_framework.reports
         private static ExtentReports extent = new ExtentReports();
         public static ExtentReports InitReport()
         {
-            var htmlReporter = new ExtentSparkReporter("ExtentReport.html");
+            var htmlReporter = new ExtentSparkReporter(FrameworkConstants.htmlReportFilePath);
             extent.AddSystemInfo("Environment", "QA");
             extent.AddSystemInfo("Browser", ConfigReader.GetConfig().Browser);
             extent.AddSystemInfo("OS", "Windows 10");

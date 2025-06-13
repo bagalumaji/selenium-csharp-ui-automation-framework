@@ -16,6 +16,5 @@ namespace selenium_csharp_ui_automation_framework.Pages
         {
             Assert.That(IsTitleProductDisplayed(), "Title 'Products' is not displayed on the page.");
         }
-
     }
 }

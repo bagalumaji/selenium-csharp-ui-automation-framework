@@ -9,7 +9,7 @@ namespace selenium_csharp_ui_automation_framework.reports
         private static ExtentReports extent = new ExtentReports();
         public static ExtentReports InitReport()
         {
-            var htmlReporter = new ExtentSparkReporter("Reports/ExtentReport.html");
+            var htmlReporter = new ExtentSparkReporter("ExtentReport.html");
             extent.AddSystemInfo("Environment", "QA");
             extent.AddSystemInfo("Browser", ConfigReader.GetConfig().Browser);
             extent.AddSystemInfo("OS", "Windows 10");

@@ -2,6 +2,7 @@
 using AventStack.ExtentReports.Reporter;
 using selenium_csharp_ui_automation_framework.config;
 using selenium_csharp_ui_automation_framework.Constants;
+using selenium_csharp_ui_automation_framework.utils;
 
 namespace selenium_csharp_ui_automation_framework.reports
 {
@@ -29,7 +30,7 @@ namespace selenium_csharp_ui_automation_framework.reports
         public static void CreateTest()
         {
             extent ??= CreateExtentReports();
-            ExtentManger.SetExtentTest(extent.CreateTest(TestContext.CurrentContext.Test.Name, TestContext.CurrentContext.Test.FullName));
+            ExtentManger.SetExtentTest(extent.CreateTest(TestCaseNameUtil.GetTestCaseName()));
         }
 
         public static void FlushReport()

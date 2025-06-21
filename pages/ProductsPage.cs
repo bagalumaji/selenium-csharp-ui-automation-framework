@@ -1,6 +1,7 @@
 ﻿using OpenQA.Selenium;
 using selenium_csharp_ui_automation_framework.config;
 using selenium_csharp_ui_automation_framework.PageAction;
+using selenium_csharp_ui_automation_framework.reports;
 
 namespace selenium_csharp_ui_automation_framework.Pages
 {
@@ -14,6 +15,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
         }
         public void VerifyThatTitleProductIsDisplayed()
         {
+            ExtentLogger.Info("Verifying that title 'Products' is displayed on the page");
             Assert.That(IsTitleProductDisplayed(), "Title 'Products' is not displayed on the page.");
         }
     }

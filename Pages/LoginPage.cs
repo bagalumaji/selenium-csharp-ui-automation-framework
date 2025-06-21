@@ -24,7 +24,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
         }
         public void EnterPassword(string password)
         {
-            ExtentLogger.Info("Entering
+            ExtentLogger.Info("Entering password: " + password);
             PasswordTextBox.SendKeysToElement(password);
         }
         public void login(string userName, string password)

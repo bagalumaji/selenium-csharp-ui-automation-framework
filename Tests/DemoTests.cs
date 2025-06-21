@@ -14,13 +14,10 @@ namespace selenium_csharp_ui_automation_framework.Tests
             ExtentReport.InitReport();
             var config = ConfigReader.GetConfig();
 
-            Console.WriteLine("Title : " + PageAction.PageActions.Title);
             ExtentReport.CreateTest();
-            ExtentLogger.Info("Title : " + PageAction.PageActions.Title);
-
+          
             Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
-            ExtentLogger.Info("Title : " + PageAction.PageActions.Title);
-
+          
             LoginPage loginPage = new();
             loginPage.verifyThatLoginButtonIsDisplayed();
             loginPage.login(config.Username, config.Password);

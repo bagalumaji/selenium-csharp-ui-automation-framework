@@ -7,7 +7,8 @@ namespace selenium_csharp_ui_automation_framework.reports
 {
     public class ExtentReport
     {
-        private static ExtentReports ?extent;
+        private static ExtentReports extent;
+
         public static void InitReport()
         {
             if (extent == null)
@@ -22,20 +23,16 @@ namespace selenium_csharp_ui_automation_framework.reports
                 extent.AttachReporter(htmlReporter);
             }
         }
+
         public static void CreateTest(string testName)
         {
-            if (extent != null)
-            {
-                ExtentManger.SetExtentTest(extent.CreateTest(testName));
-            }
+            Console.WriteLine("test case ...."+TestContext.CurrentContext.Test.Name);
+            ExtentManger.SetExtentTest(extent.CreateTest(testName));
         }
 
         public static void FlushReport()
         {
-            if(extent != null)
-            {
-                extent.Flush();
-            }   
+            extent.Flush(); 
             ExtentManger.Unload();
         }
     }

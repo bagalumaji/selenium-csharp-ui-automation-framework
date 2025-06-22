@@ -11,7 +11,6 @@ namespace selenium_csharp_ui_automation_framework.Tests
         [Test]
         public void DemoTest()
         {
-            ExtentReport.InitReport();
             var config = ConfigReader.GetConfig();
 
             ExtentReport.CreateTest();
@@ -19,14 +18,13 @@ namespace selenium_csharp_ui_automation_framework.Tests
             Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
           
             LoginPage loginPage = new();
-            loginPage.verifyThatLoginButtonIsDisplayed();
-            loginPage.login(config.Username, config.Password);
+            loginPage.VerifyThatLoginButtonIsDisplayed();
+            loginPage.LoginToApplication(config.Username, config.Password);
             ExtentLogger.Info("Title : " + PageAction.PageActions.Title);
 
             ProductsPage homePage = new();
             homePage.VerifyThatTitleProductIsDisplayed();
             ExtentLogger.Pass();
-            ExtentReport.FlushReport();
         }
     }
 }

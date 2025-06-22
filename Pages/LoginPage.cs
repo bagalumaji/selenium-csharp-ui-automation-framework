@@ -7,9 +7,9 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class LoginPage : BasePage
     {
-        private static By UserNameTextBox => By.Id("user-name");
-        private static By PasswordTextBox =>By.Id("password");
-        private static By LoginButton => By.Name("login-button");
+        private readonly By UserNameTextBox = By.Id("user-name");
+        private readonly By PasswordTextBox = By.Id("password");
+        private readonly By LoginButton = By.XPath("//input[@value='Login' or @type='submit']");
 
         public void ClickLoginButton()
         {
@@ -27,7 +27,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
             ExtentLogger.Info("Entering password: " + password);
             PasswordTextBox.SendKeysToElement(password);
         }
-        public void login(string userName, string password)
+        public void LoginToApplication(string userName, string password)
         {
             EnterUserName(userName);
             EnterPassword(password);
@@ -37,9 +37,9 @@ namespace selenium_csharp_ui_automation_framework.Pages
         {
             return LoginButton.IsElementDisplayed();
         }
-        public void verifyThatLoginButtonIsDisplayed()
+        public void VerifyThatLoginButtonIsDisplayed()
         {
-            ExtentLogger.Info("Verifying that login button is displayed on the page");
+            ExtentLogger.Info("Verifying that LoginToApplication button is displayed on the page");
             Assert.That(IsLoginButtonDisplayed(), "Login button is not displayed on the page.");
         }
     }

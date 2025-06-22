@@ -1,4 +1,5 @@
-﻿using selenium_csharp_ui_automation_framework.reports;
+﻿using selenium_csharp_ui_automation_framework.driver;
+using selenium_csharp_ui_automation_framework.reports;
 
 namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
 {
@@ -17,12 +18,13 @@ namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
         [SetUp]
         public void Setup()
         {
-            driver.Driver.InitDriver();
+            Driver.InitDriver();
+            ExtentReport.CreateTest();
         }
         [TearDown]
         public void TearDown()
         {
-            driver.Driver.QuitDriver();
+            Driver.QuitDriver();
         }
     }
 }

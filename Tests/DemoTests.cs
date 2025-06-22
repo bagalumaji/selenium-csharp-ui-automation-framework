@@ -13,8 +13,6 @@ namespace selenium_csharp_ui_automation_framework.Tests
         {
             var config = ConfigReader.GetConfig();
 
-            ExtentReport.CreateTest();
-          
             Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
           
             LoginPage loginPage = new();

@@ -7,7 +7,7 @@ namespace selenium_csharp_ui_automation_framework.Pages
 {
     public class ProductsPage : BasePage
     {
-        private static By TitleProduct => By.XPath("//span[normalize-space()='Products']");
+        private readonly By TitleProduct = By.XPath("//span[normalize-space()='Products']");
 
         public bool IsTitleProductDisplayed()
         {

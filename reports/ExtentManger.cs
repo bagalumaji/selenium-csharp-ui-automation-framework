@@ -1,5 +1,4 @@
 ﻿using AventStack.ExtentReports;
-using OpenQA.Selenium;
 
 namespace selenium_csharp_ui_automation_framework.reports
 {
@@ -7,14 +6,14 @@ namespace selenium_csharp_ui_automation_framework.reports
     {
         private static ThreadLocal<ExtentTest>? _extentTest = new();
 
-        public static ExtentTest? GetExtentTest() =>_extentTest?.Value;
+        public static ExtentTest? GetExtentTest() => _extentTest?.Value;
 
-        public static void SetExtentTest(ExtentTest extent) 
-        { 
+        public static void SetExtentTest(ExtentTest extent)
+        {
             _extentTest ??= new ThreadLocal<ExtentTest>();
             _extentTest.Value = extent;
         }
-      
+
         public static void Unload()
         {
             if (_extentTest?.Value != null && _extentTest.IsValueCreated)

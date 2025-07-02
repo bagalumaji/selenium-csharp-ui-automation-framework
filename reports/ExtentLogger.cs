@@ -18,5 +18,7 @@ namespace selenium_csharp_ui_automation_framework.reports
             ExtentManger.GetExtentTest().Fail(MediaEntityBuilder.CreateScreenCaptureFromBase64String(ScreenshotUtil.TakeScreenshotAsString()).Build());
             ExtentManger.GetExtentTest().Fail(TestCaseNameUtil.GetTestCaseName() + " Test Failed");
         }
+
+        public static void Skip()=> ExtentManger.GetExtentTest().Skip(TestCaseNameUtil.GetTestCaseName() + " Test skipped.");
     }
 }

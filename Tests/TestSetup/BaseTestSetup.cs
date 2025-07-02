@@ -1,5 +1,6 @@
 ﻿using selenium_csharp_ui_automation_framework.driver;
 using selenium_csharp_ui_automation_framework.reports;
+using selenium_csharp_ui_automation_framework.utils;
 
 namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
 {
@@ -25,6 +26,7 @@ namespace selenium_csharp_ui_automation_framework.Tests.TestSetup
         public void TearDown()
         {
             Driver.QuitDriver();
+            TestResultReporterUtil.ReportTestOutcome();
         }
     }
 }

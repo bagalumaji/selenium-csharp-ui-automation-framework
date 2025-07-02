@@ -22,7 +22,6 @@ namespace selenium_csharp_ui_automation_framework.Tests
 
             ProductsPage homePage = new();
             homePage.VerifyThatTitleProductIsDisplayed();
-            ExtentLogger.Pass();
         }
     }
 }

@@ -1,6 +1,9 @@
-﻿namespace selenium_csharp_ui_automation_framework.Utils
+﻿using OpenQA.Selenium;
+
+namespace selenium_csharp_ui_automation_framework.Utils
 {
-    internal class DyanamicXpathUtil
+    public class DyanamicXpathUtil
     {
+        public static By GetDynamicXpath(string xpath, string value) => By.XPath(xpath.Replace("{value}", value));
     }
 }

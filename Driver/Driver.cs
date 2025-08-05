@@ -24,11 +24,12 @@ namespace selenium_csharp_ui_automation_framework.driver
 
         public static void QuitDriver()
         {
-            if (DriverManager.GetDriver() != null)
+            var driver = DriverManager.GetDriver();
+            if (driver != null)
             {
                 try
                 {
-                    DriverManager.GetDriver().Quit();
+                    driver.Quit();
                 }
                 finally
                 {

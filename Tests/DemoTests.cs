@@ -13,7 +13,7 @@ namespace selenium_csharp_ui_automation_framework.Tests
         {
             var config = ConfigReader.GetConfig();
 
-            Assert.That(PageAction.PageActions.Title.Contains(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
+            Assert.That(PageAction.PageActions.Title, Does.Contain(LoginPageConstants.Title), "Title does not contain " + LoginPageConstants.Title);
           
             LoginPage loginPage = new();
             loginPage.VerifyThatLoginButtonIsDisplayed();
